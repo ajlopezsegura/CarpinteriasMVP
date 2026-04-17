@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* LUMINAL — Palette */
+  --color-bg:           #1E2530;
+  --color-bg-card:      #2A3444;
+  --color-bg-deep:      #141A24;
+  --color-text:         #F0EDE8;
+  --color-text-muted:   rgba(240,237,232,0.50);
+  --color-accent:       #5B8FA8;
+  --color-accent-light: #7AAFC8;
+  --color-accent-dim:   rgba(91,143,168,0.20);
+  --color-border:       rgba(91,143,168,0.18);
+  --header-h:           56px;
+}
+
+@media (pointer: fine) and (hover: hover) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+  font-family: Montserrat, sans-serif;
+}
+
+.accent-rule {
+  width: 36px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+@media (min-width: 640px) {
+  .accent-rule { width: 48px; }
+}
+
+.label-luxury {
+  font-family: Montserrat, sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+@media (min-width: 640px) {
+  .label-luxury { font-size: 0.65rem; letter-spacing: 0.18em; }
+}
+
+.display-heading {
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+}
+
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 2px; }
+}
