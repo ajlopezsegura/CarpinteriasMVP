@@ -52,7 +52,12 @@ export default function CoverPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.3, ease: [0.43, 0.13, 0.23, 0.96] }}
             className="label-luxury mb-8 sm:mb-12"
-            style={{ color: 'rgba(91,143,168,0.9)', fontSize: '0.6rem', letterSpacing: '0.28em', fontWeight: 700 }}
+            style={{
+              color: 'rgba(91,143,168,0.9)',
+              fontSize: 'clamp(0.48rem, 2vw, 0.6rem)',
+              letterSpacing: 'clamp(0.14em, 0.8vw, 0.28em)',
+              fontWeight: 700,
+            }}
           >
             CARPINTERÍA DE ALUMINIO · PVC
           </motion.p>
@@ -207,8 +212,14 @@ export default function CoverPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.25 }}
           transition={{ duration: 1, delay: 2.8 }}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 label-luxury text-center"
-          style={{ fontSize: '0.45rem', letterSpacing: '0.25em', color: 'rgba(240,237,232,0.35)', whiteSpace: 'nowrap' }}
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 label-luxury text-center px-4"
+          style={{
+            fontSize: 'clamp(0.38rem, 1.6vw, 0.45rem)',
+            letterSpacing: 'clamp(0.12em, 0.6vw, 0.25em)',
+            color: 'rgba(240,237,232,0.35)',
+            whiteSpace: 'nowrap',
+            maxWidth: '95vw',
+          }}
         >
           {slogan?.toUpperCase()}
         </motion.p>

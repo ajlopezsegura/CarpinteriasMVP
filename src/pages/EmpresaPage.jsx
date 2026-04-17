@@ -57,7 +57,11 @@ export default function EmpresaPage() {
                 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.2 }}
                 className="display-heading text-text"
-                style={{ fontSize: 'clamp(1.8rem, 6vw, 3.4rem)', letterSpacing: '0.06em', lineHeight: 1.05 }}>
+                style={{
+                  fontSize: 'clamp(1.4rem, 6vw, 3.4rem)',
+                  letterSpacing: 'clamp(0.02em, 0.4vw, 0.06em)',
+                  lineHeight: 1.1,
+                }}>
                 {lang === 'es'
                   ? <>DISEÑAMOS LUZ,<br/>FABRICAMOS CONFORT.</>
                   : <>WE DESIGN LIGHT,<br/>WE BUILD COMFORT.</>}

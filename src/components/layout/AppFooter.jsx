@@ -23,7 +23,7 @@ export default function AppFooter() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 pointer-events-none">
-      <div className="flex items-center justify-center gap-2 sm:gap-4 pb-4 pointer-events-auto"
+      <div className="flex items-center justify-center gap-1.5 sm:gap-3 px-3 pb-3 sm:pb-4 pointer-events-auto"
         style={{ fontFamily: 'Montserrat, sans-serif' }}>
         {STEPS.map(step => {
           const active = location.pathname === step.path
@@ -33,10 +33,10 @@ export default function AppFooter() {
               key={step.path}
               onClick={() => navigate(step.path)}
               data-cursor="hover"
-              className="label-luxury transition-all duration-300 px-3 sm:px-4 py-2"
+              className="label-luxury transition-all duration-300 px-2.5 sm:px-4 py-2 whitespace-nowrap"
               style={{
-                fontSize: '0.55rem',
-                letterSpacing: '0.18em',
+                fontSize: 'clamp(0.42rem, 1.5vw, 0.55rem)',
+                letterSpacing: 'clamp(0.08em, 0.5vw, 0.18em)',
                 border: isCTA
                   ? `1px solid var(--color-accent)`
                   : `1px solid ${active ? 'var(--color-accent)' : 'rgba(91,143,168,0.18)'}`,

@@ -6,6 +6,7 @@ import PageTransition from '../components/layout/PageTransition'
 import LangToggle from '../components/ui/LangToggle'
 import { useProject } from '../context/ProjectContext'
 import { useLang } from '../context/LangContext'
+import { useIsMobile } from '../hooks/useMediaQuery'
 
 function formatDate(iso, lang) {
   if (!iso) return '—'
@@ -15,8 +16,7 @@ function formatDate(iso, lang) {
   })
 }
 
-function ProgressRing({ percent }) {
-  const size    = 160
+function ProgressRing({ percent, size = 160 }) {
   const stroke  = 6
   const radius  = (size - stroke) / 2
   const circ    = 2 * Math.PI * radius
@@ -38,8 +38,8 @@ function ProgressRing({ percent }) {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <p className="display-heading"
-          style={{ fontSize: '2.2rem', color: 'var(--color-text)', letterSpacing: '0.02em' }}>
-          {percent}<span style={{ fontSize: '1.1rem', color: 'var(--color-accent)' }}>%</span>
+          style={{ fontSize: size * 0.28, color: 'var(--color-text)', letterSpacing: '0.02em' }}>
+          {percent}<span style={{ fontSize: size * 0.14, color: 'var(--color-accent)' }}>%</span>
         </p>
       </div>
     </div>
@@ -51,6 +51,7 @@ export default function ObraPage() {
   const navigate   = useNavigate()
   const { obras }  = useProject()
   const { lang }   = useLang()
+  const isMobile   = useIsMobile()
 
   const obra = useMemo(
     () => obras.find(o => o.codigo?.toUpperCase() === codigo?.toUpperCase()),
@@ -149,7 +150,7 @@ export default function ObraPage() {
                 </p>
               </div>
               <div className="flex-shrink-0">
-                <ProgressRing percent={percent} />
+                <ProgressRing percent={percent} size={isMobile ? 120 : 160} />
               </div>
             </motion.div>
 

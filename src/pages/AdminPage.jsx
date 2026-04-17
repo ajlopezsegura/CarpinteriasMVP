@@ -507,16 +507,16 @@ export default function AdminPage() {
         </div>
 
         {/* Tabs */}
-        <div className="flex-shrink-0 flex items-center gap-1 px-6 sm:px-10"
+        <div className="flex-shrink-0 flex items-center gap-0.5 sm:gap-1 px-3 sm:px-10 overflow-x-auto"
           style={{ borderBottom: '1px solid rgba(91,143,168,0.12)' }}>
           {TABS.map(t => {
             const active = tab === t.id
             return (
               <button key={t.id} onClick={() => setTab(t.id)}
-                className="label-luxury px-4 py-3 transition-all duration-200"
+                className="label-luxury px-3 sm:px-4 py-3 transition-all duration-200 whitespace-nowrap"
                 style={{
-                  fontSize: '0.55rem',
-                  letterSpacing: '0.2em',
+                  fontSize: 'clamp(0.46rem, 1.8vw, 0.55rem)',
+                  letterSpacing: 'clamp(0.12em, 0.5vw, 0.2em)',
                   color: active ? 'var(--color-accent)' : 'rgba(240,237,232,0.45)',
                   borderBottom: active ? '1px solid var(--color-accent)' : '1px solid transparent',
                   marginBottom: -1,
