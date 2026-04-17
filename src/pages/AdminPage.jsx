@@ -126,17 +126,22 @@ function ObrasTab() {
           <div key={o.id}
             style={{ border: '1px solid rgba(91,143,168,0.15)', backgroundColor: 'var(--color-bg-card)' }}>
             <button onClick={() => setExpanded(isOpen ? null : o.id)}
-              className="w-full flex items-center justify-between gap-4 p-4 text-left">
-              <div className="flex flex-col items-start gap-1">
+              className="w-full flex items-center justify-between gap-3 p-4 text-left">
+              <div className="flex flex-col items-start gap-1 min-w-0 flex-1">
                 <p className="label-luxury"
                   style={{ fontSize: '0.48rem', color: 'var(--color-accent)', letterSpacing: '0.2em' }}>
                   {o.codigo}
                 </p>
-                <p className="display-heading text-text" style={{ fontSize: '0.9rem', letterSpacing: '0.04em' }}>
+                <p className="display-heading text-text truncate max-w-full"
+                  style={{ fontSize: '0.9rem', letterSpacing: '0.04em' }}>
                   {o.cliente}
                 </p>
+                <p className="label-luxury sm:hidden mt-0.5"
+                  style={{ fontSize: '0.44rem', color: 'var(--color-accent)', letterSpacing: '0.12em' }}>
+                  {faseActN.toUpperCase()}
+                </p>
               </div>
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-3 sm:gap-5 flex-shrink-0">
                 <div className="text-right hidden sm:block">
                   <p className="label-luxury" style={{ fontSize: '0.45rem', color: 'rgba(240,237,232,0.4)' }}>
                     FASE ACTUAL
@@ -147,7 +152,7 @@ function ObrasTab() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div style={{
-                    width: 48, height: 4,
+                    width: 40, height: 4,
                     backgroundColor: 'rgba(91,143,168,0.15)',
                   }}>
                     <div style={{
@@ -157,7 +162,7 @@ function ObrasTab() {
                     }} />
                   </div>
                   <p className="label-luxury"
-                    style={{ fontSize: '0.55rem', color: 'var(--color-accent)', width: 32, textAlign: 'right' }}>
+                    style={{ fontSize: '0.55rem', color: 'var(--color-accent)', width: 30, textAlign: 'right' }}>
                     {percent}%
                   </p>
                 </div>
@@ -383,18 +388,21 @@ function ActividadTab() {
   return (
     <div className="flex flex-col gap-4">
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
         {[
-          { label: 'VISITAS',      value: stats.total      },
-          { label: 'CONVERTIDAS',  value: stats.converted  },
-          { label: 'PÁGINAS/VISITA', value: stats.avgPages },
+          { label: 'VISITAS',         labelMobile: 'VISITAS',   value: stats.total      },
+          { label: 'CONVERTIDAS',     labelMobile: 'CONV.',     value: stats.converted  },
+          { label: 'PÁGINAS/VISITA',  labelMobile: 'PÁG/VIS',   value: stats.avgPages },
         ].map(s => (
-          <div key={s.label} className="p-4"
+          <div key={s.label} className="p-3 sm:p-4"
             style={{ border: '1px solid rgba(91,143,168,0.15)', backgroundColor: 'var(--color-bg-card)' }}>
-            <p className="label-luxury" style={{ fontSize: '0.42rem', color: 'rgba(240,237,232,0.4)' }}>
-              {s.label}
+            <p className="label-luxury"
+              style={{ fontSize: 'clamp(0.38rem, 1.4vw, 0.42rem)', color: 'rgba(240,237,232,0.4)', letterSpacing: '0.12em' }}>
+              <span className="hidden sm:inline">{s.label}</span>
+              <span className="sm:hidden">{s.labelMobile}</span>
             </p>
-            <p className="display-heading mt-1" style={{ fontSize: '1.4rem', color: 'var(--color-accent)' }}>
+            <p className="display-heading mt-1"
+              style={{ fontSize: 'clamp(1rem, 3vw, 1.4rem)', color: 'var(--color-accent)' }}>
               {s.value}
             </p>
           </div>

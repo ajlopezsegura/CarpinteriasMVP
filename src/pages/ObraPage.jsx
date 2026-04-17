@@ -131,25 +131,30 @@ export default function ObraPage() {
             <motion.div
               initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12 mb-10">
-              <div className="flex-1">
+              className="flex flex-col items-center text-center lg:flex-row lg:items-center lg:text-left gap-6 lg:gap-12 mb-10">
+              <div className="flex-1 order-2 lg:order-1">
                 <p className="label-luxury mb-2"
-                  style={{ fontSize: '0.5rem', letterSpacing: '0.22em', color: 'rgba(91,143,168,0.65)' }}>
+                  style={{ fontSize: 'clamp(0.44rem, 1.6vw, 0.5rem)', letterSpacing: '0.22em', color: 'rgba(91,143,168,0.65)' }}>
                   {lang === 'es' ? 'CÓDIGO DE OBRA' : 'PROJECT CODE'}
                 </p>
                 <h1 className="display-heading text-text mb-4"
-                  style={{ fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', letterSpacing: '0.08em' }}>
+                  style={{ fontSize: 'clamp(1.6rem, 5vw, 2.8rem)', letterSpacing: '0.08em' }}>
                   {obra.codigo}
                 </h1>
                 <p className="label-luxury"
-                  style={{ fontSize: '0.6rem', color: 'var(--color-accent)', letterSpacing: '0.15em' }}>
+                  style={{
+                    fontSize: 'clamp(0.5rem, 1.8vw, 0.6rem)',
+                    color: 'var(--color-accent)',
+                    letterSpacing: 'clamp(0.1em, 0.5vw, 0.15em)',
+                    lineHeight: 1.5,
+                  }}>
                   {finalizado
                     ? (lang === 'es' ? '● FINALIZADA' : '● COMPLETED')
                     : (lang === 'es' ? `● EN CURSO · ${faseActualObj?.nombre?.toUpperCase()}` : `● IN PROGRESS · ${faseActualObj?.nombre?.toUpperCase()}`)
                   }
                 </p>
               </div>
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 order-1 lg:order-2">
                 <ProgressRing percent={percent} size={isMobile ? 120 : 160} />
               </div>
             </motion.div>
