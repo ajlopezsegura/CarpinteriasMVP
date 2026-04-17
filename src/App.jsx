@@ -3,9 +3,12 @@ import { AnimatePresence, motion } from 'framer-motion'
 import LuxuryCursor      from './components/cursor/LuxuryCursor'
 import AppFooter         from './components/layout/AppFooter'
 import CoverPage         from './pages/CoverPage'
+import EmpresaPage       from './pages/EmpresaPage'
 import SistemasPage      from './pages/SistemasPage'
 import SistemaDetailPage from './pages/SistemaDetailPage'
+import ObraPage          from './pages/ObraPage'
 import ContactPage       from './pages/ContactPage'
+import AdminPage         from './pages/AdminPage'
 import PrivacyPage       from './pages/PrivacyPage'
 import { useProject }    from './context/ProjectContext'
 
@@ -38,9 +41,12 @@ export default function App() {
       <AnimatePresence mode="wait" initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route path="/"                   element={<CoverPage />} />
+          <Route path="/empresa"            element={<EmpresaPage />} />
           <Route path="/sistemas"           element={<SistemasPage />} />
           <Route path="/sistemas/:slug"     element={<SistemaDetailPage />} />
+          <Route path="/obra/:codigo"       element={<ObraPage />} />
           <Route path="/contacto"           element={<ContactPage />} />
+          <Route path="/admin"              element={<AdminPage />} />
           <Route path="/privacy"            element={<PrivacyPage />} />
         </Routes>
       </AnimatePresence>

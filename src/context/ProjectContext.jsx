@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { supabase, hasSupabase } from '../lib/supabase'
 import { SISTEMAS_DEMO } from '../data/sistemas'
+import { OBRAS_DEMO } from '../data/obras'
 
 const ProjectContext = createContext(null)
 
@@ -44,6 +45,7 @@ const EMPRESA = {
 
 export function ProjectProvider({ children }) {
   const [sistemas, setSistemas] = useState(SISTEMAS_DEMO)
+  const [obras, setObras]       = useState(OBRAS_DEMO)
   const [loading, setLoading]   = useState(hasSupabase)
 
   useEffect(() => {
@@ -52,19 +54,15 @@ export function ProjectProvider({ children }) {
 
     async function load() {
       try {
-        const { data, error } = await supabase
-          .from('sistemas')
-          .select('*')
-          .order('orden', { ascending: true })
+        const [sistRes, obrasRes] = await Promise.all([
+          supabase.from('sistemas').select('*').order('orden', { ascending: true }),
+          supabase.from('obras').select('*').order('created_at', { ascending: false }),
+        ])
         if (cancelled) return
-        if (error || !data || data.length === 0) {
-          setSistemas(SISTEMAS_DEMO)
-        } else {
-          setSistemas(data)
-        }
-      } catch {
-        if (!cancelled) setSistemas(SISTEMAS_DEMO)
-      } finally {
+        if (!sistRes.error && sistRes.data?.length > 0) setSistemas(sistRes.data)
+        if (!obrasRes.error && obrasRes.data?.length > 0) setObras(obrasRes.data)
+      } catch { /* keep demo data */ }
+      finally {
         if (!cancelled) setLoading(false)
       }
     }
@@ -74,7 +72,7 @@ export function ProjectProvider({ children }) {
   }, [])
 
   return (
-    <ProjectContext.Provider value={{ empresa: EMPRESA, sistemas, loading }}>
+    <ProjectContext.Provider value={{ empresa: EMPRESA, sistemas, obras, setObras, loading }}>
       {children}
     </ProjectContext.Provider>
   )
