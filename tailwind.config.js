@@ -4,17 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg:             '#1E2530',
-        'bg-card':      '#2A3444',
-        'bg-deep':      '#141A24',
-        text:           '#F0EDE8',
-        'text-muted':   'rgba(240,237,232,0.50)',
-        accent:         '#5B8FA8',
-        'accent-light': '#7AAFC8',
+        bg:             '#0A1429',
+        'bg-card':      '#162238',
+        'bg-deep':      '#050A18',
+        text:           '#F5EDD8',
+        'text-muted':   'rgba(245,237,216,0.55)',
+        accent:         '#D4A574',
+        'accent-light': '#E8C18A',
+        rose:           '#C97B7B',
       },
       fontFamily: {
         sans:  ['Montserrat', 'system-ui', 'sans-serif'],
-        serif: ['Montserrat', 'system-ui', 'sans-serif'],
+        serif: ['"EB Garamond"', '"Cormorant Garamond"', 'Georgia', 'serif'],
       },
       letterSpacing: {
         luxury: '0.18em',
@@ -23,10 +24,6 @@ export default {
       },
       transitionTimingFunction: {
         luxury: 'cubic-bezier(0.43, 0.13, 0.23, 0.96)',
-      },
-      transitionDuration: {
-        800:  '800ms',
-        1200: '1200ms',
       },
     },
   },
