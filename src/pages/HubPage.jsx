@@ -82,7 +82,7 @@ export default function HubPage() {
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.4 + i * 0.12, ease: [0.43, 0.13, 0.23, 0.96] }}
-                className="absolute group"
+                className="absolute group p-2"
                 style={{
                   left: `${a.posicion.x}%`,
                   top:  `${a.posicion.y}%`,
@@ -90,28 +90,31 @@ export default function HubPage() {
                 }}
                 whileHover={{ scale: 1.08 }}
               >
-                <div className="flex flex-col items-center gap-2">
+                <div className="flex flex-col items-center gap-1" style={{ maxWidth: 110 }}>
                   <Planet
                     color={a.color}
                     size={a.tamaño}
                     visited={wasVisited}
                     withRing={a.id === 'geografo'}
                   />
-                  <p className="label-luxury opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+                  <p className="label-luxury transition-all duration-300"
                     style={{
-                      fontSize: '0.5rem',
+                      fontSize: 'clamp(0.38rem, 1.3vw, 0.45rem)',
                       letterSpacing: '0.18em',
-                      color: 'var(--color-accent)',
+                      color: wasVisited ? 'var(--color-accent)' : 'rgba(212,165,116,0.55)',
                       fontFamily: 'Montserrat, sans-serif',
+                      marginTop: 6,
                     }}>
                     {a.numero}
                   </p>
-                  <p className="display-serif text-text/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+                  <p className="display-serif transition-all duration-300 text-center"
                     style={{
-                      fontSize: 'clamp(0.85rem, 2vw, 1rem)',
+                      fontSize: 'clamp(0.72rem, 1.7vw, 0.9rem)',
                       fontStyle: 'italic',
                       letterSpacing: '0.02em',
-                      marginTop: -4,
+                      lineHeight: 1.15,
+                      color: wasVisited ? 'rgba(245,237,216,0.95)' : 'rgba(245,237,216,0.7)',
+                      marginTop: -1,
                     }}>
                     {a.titulo}
                   </p>
