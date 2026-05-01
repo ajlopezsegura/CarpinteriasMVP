@@ -12,6 +12,7 @@ export const ASTEROIDES = [
     icono: 'CrownIcon',
     tamaño: 78,
     pasaje: [
+      'Llegó al primer planeta. Era tan diminuto que apenas cabía allí un trono cubierto de armiño.',
       '—¡Ah, aquí hay un súbdito! —exclamó el rey cuando descubrió al principito.',
       'Y el principito se preguntó: «¿Cómo puede reconocerme si jamás me ha visto?»',
       'No sabía que para los reyes el mundo está muy simplificado. Todos los hombres son súbditos.',
