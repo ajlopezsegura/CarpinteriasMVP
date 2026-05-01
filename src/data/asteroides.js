@@ -9,8 +9,8 @@ export const ASTEROIDES = [
     titulo: 'El Rey',
     subtitulo: 'El que reina sobre todo y sobre nada',
     color: '#A85432',         // rojo púrpura regio
-    posicion: { x: 18, y: 28 },
-    tamaño: 70,
+    icono: 'CrownIcon',
+    tamaño: 78,
     pasaje: [
       '—¡Ah, aquí hay un súbdito! —exclamó el rey cuando descubrió al principito.',
       'Y el principito se preguntó: «¿Cómo puede reconocerme si jamás me ha visto?»',
@@ -34,8 +34,8 @@ export const ASTEROIDES = [
     titulo: 'El Vanidoso',
     subtitulo: 'Solo oye los aplausos',
     color: '#C97B7B',
-    posicion: { x: 75, y: 18 },
-    tamaño: 60,
+    icono: 'TopHatIcon',
+    tamaño: 70,
     pasaje: [
       '—¡Ah! Aquí viene la visita de un admirador —se dijo el principito al divisar al vanidoso.',
       '—Buenos días —dijo el principito—. ¡Qué sombrero tan raro tiene!',
@@ -55,8 +55,8 @@ export const ASTEROIDES = [
     titulo: 'El Bebedor',
     subtitulo: 'Bebe para olvidar que bebe',
     color: '#5C3B2E',
-    posicion: { x: 28, y: 70 },
-    tamaño: 55,
+    icono: 'BottleIcon',
+    tamaño: 70,
     pasaje: [
       'La visita al bebedor fue muy corta, pero sumió al principito en una gran melancolía.',
       '—¿Qué haces? —dijo al bebedor, que estaba sentado en silencio frente a una colección de botellas vacías y otra colección de botellas llenas.',
@@ -76,8 +76,8 @@ export const ASTEROIDES = [
     titulo: 'El Hombre de Negocios',
     subtitulo: 'Cuenta estrellas que cree poseer',
     color: '#3F5566',
-    posicion: { x: 80, y: 58 },
-    tamaño: 65,
+    icono: 'NumbersIcon',
+    tamaño: 75,
     pasaje: [
       '«—Tres y dos, cinco. Cinco y siete, doce. Doce y tres, quince. ¡Hola! Quince y siete, veintidós...»',
       '—¿Quinientos millones de qué? —preguntó el principito.',
@@ -103,8 +103,8 @@ export const ASTEROIDES = [
     titulo: 'El Farolero',
     subtitulo: 'Enciende y apaga sin descanso',
     color: '#D4A574',
-    posicion: { x: 50, y: 38 },
-    tamaño: 50,
+    icono: 'LampIcon',
+    tamaño: 65,
     pasaje: [
       '—Buenos días. ¿Por qué acabas de apagar tu farol?',
       '—Es la consigna —respondió el farolero—. Buenos días.',
@@ -130,8 +130,8 @@ export const ASTEROIDES = [
     titulo: 'El Geógrafo',
     subtitulo: 'Sabe de todo, no ha visto nada',
     color: '#7A6841',
-    posicion: { x: 18, y: 82 },
-    tamaño: 75,
+    icono: 'BookIcon',
+    tamaño: 78,
     pasaje: [
       '—¡Mira! ¡Aquí hay un explorador! —exclamó el geógrafo, cuando vio al principito.',
       '—¿Qué es ese gran libro? —dijo el principito—. ¿Qué hace usted aquí?',
@@ -157,8 +157,8 @@ export const ASTEROIDES = [
     titulo: 'La Tierra',
     subtitulo: 'El zorro y la rosa',
     color: '#4A7B6E',
-    posicion: { x: 72, y: 80 },
-    tamaño: 90,
+    icono: 'FoxIcon',
+    tamaño: 95,
     pasaje: [
       'En ese momento apareció el zorro.',
       '—Buenos días —dijo el zorro.',

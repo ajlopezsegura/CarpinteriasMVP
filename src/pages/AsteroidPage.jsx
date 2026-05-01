@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft } from 'lucide-react'
 import Stars from '../components/space/Stars'
 import Planet from '../components/space/Planet'
+import * as Icons from '../components/illustrations/Illustrations'
 import { ASTEROIDES } from '../data/asteroides'
 import { usePrincipito } from '../context/PrincipitoContext'
 
@@ -98,12 +99,18 @@ export default function AsteroidPage() {
           initial={{ scale: 0.4, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.2, ease: [0.43, 0.13, 0.23, 0.96] }}>
-          <Planet
-            color={asteroide.color}
-            size={planetSize}
-            visited={isVisited(asteroide.id)}
-            withRing={asteroide.id === 'geografo'}
-          />
+          {(() => {
+            const IconComp = Icons[asteroide.icono]
+            return (
+              <Planet
+                color={asteroide.color}
+                size={planetSize}
+                visited={isVisited(asteroide.id)}
+                withRing={asteroide.id === 'geografo'}
+                character={IconComp ? <IconComp size={planetSize * 0.32} /> : null}
+              />
+            )
+          })()}
         </motion.div>
       </div>
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export default function Planet({ color, size, visited = false, withRing = false, animated = true }) {
+export default function Planet({ color, size, visited = false, withRing = false, animated = true, character = null }) {
   const ringRotation = withRing ? -22 : 0
 
   return (
@@ -54,6 +54,21 @@ export default function Planet({ color, size, visited = false, withRing = false,
           height: `${size * 0.18}px`,
           backgroundColor: 'rgba(0,0,0,0.18)',
         }} />
+
+      {/* Personaje encima del planeta */}
+      {character && (
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            left: '50%',
+            top:  `-${size * 0.35}px`,
+            transform: 'translateX(-50%)',
+            color: visited ? 'var(--color-accent-light)' : 'var(--color-accent)',
+            opacity: visited ? 1 : 0.85,
+          }}>
+          {character}
+        </div>
+      )}
     </div>
   )
 }
