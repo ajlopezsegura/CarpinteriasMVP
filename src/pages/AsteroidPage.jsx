@@ -263,7 +263,7 @@ export default function AsteroidPage() {
               </button>
             ) : (
               <button
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/cielo')}
                 data-cursor="hover"
                 className="label-luxury px-6 py-3 transition-all duration-300"
                 style={{
