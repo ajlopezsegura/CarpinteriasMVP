@@ -51,7 +51,7 @@ export default function AsteroidPage() {
         <p className="label-luxury mb-4" style={{ color: 'rgba(245,237,216,0.5)' }}>
           Planeta desconocido
         </p>
-        <button onClick={() => navigate('/')} data-cursor="hover"
+        <button onClick={() => navigate('/cielo')} data-cursor="hover"
           className="label-luxury px-5 py-3"
           style={{ border: '1px solid var(--color-accent)', color: 'var(--color-accent)' }}>
           ← VOLVER AL CIELO
@@ -79,7 +79,7 @@ export default function AsteroidPage() {
 
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-5 sm:px-10 py-5">
-        <button onClick={() => navigate('/')} data-cursor="hover"
+        <button onClick={() => navigate('/cielo')} data-cursor="hover"
           className="flex items-center gap-1.5 label-luxury transition-colors duration-300"
           style={{ fontSize: '0.5rem', color: 'rgba(245,237,216,0.55)', letterSpacing: '0.18em' }}
           onMouseEnter={e => e.currentTarget.style.color = 'var(--color-accent)'}
